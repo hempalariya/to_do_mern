@@ -1,9 +1,11 @@
 import React from 'react'
+import NavButton from './NavButton'
 
 export default function Nav() {
   return (
-    <nav>
-        
+    <nav className='flex justify-between'>
+       <NavButton>Register</NavButton> 
+       <NavButton>Login</NavButton>
     </nav>
   )
 }
