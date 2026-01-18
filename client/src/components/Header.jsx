@@ -3,7 +3,8 @@ import Nav from './Nav'
 
 export default function Header() {
   return (
-    <div className='h-15 flex items-center bg-blue-400'>
+    <div className='h-15 flex items-center justify-between bg-blue-400 px-5'>
+      <div>Logo</div>
       <Nav/>
     </div>
   )

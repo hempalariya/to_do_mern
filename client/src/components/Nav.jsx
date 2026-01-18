@@ -3,9 +3,9 @@ import NavButton from './NavButton'
 
 export default function Nav() {
   return (
-    <nav className='flex justify-between'>
-       <NavButton>Register</NavButton> 
-       <NavButton>Login</NavButton>
+    <nav className='flex gap-5'>
+       <NavButton to={'/register'}>Register</NavButton> 
+       <NavButton to={'/login'}>Login</NavButton>
     </nav>
   )
 }
