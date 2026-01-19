@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../components/Button'
-import Card from '../components/Card'
+import WrapCard from '../components/WrapCard'
 
 const controllerClass = 'mb-3'
 const labelClass = 'text-lg block'
@@ -9,7 +9,7 @@ const inputClass = 'border border-blue-400 w-100 text-lg p-1 rounded-md'
 
 export default function Register() {
   return (
-    <Card>
+    <WrapCard>
         <form action="">
             <div className={controllerClass}>
                 <label htmlFor="fullname" className={labelClass}>Full Name</label>
@@ -33,6 +33,6 @@ export default function Register() {
             </div>
             <Button>Register</Button>
         </form>
-    </Card>
+    </WrapCard>
   )
 }

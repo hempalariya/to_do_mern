@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from '../components/Card'
 import Button from '../components/Button'
+import WrapCard from '../components/WrapCard'
 
 const controllerClass = 'mb-3'
 const labelClass = 'text-lg block'
@@ -8,7 +8,7 @@ const inputClass = 'border border-blue-400 w-100 text-lg p-1 rounded-md'
 
 export default function Login() {
   return (
-    <Card>
+    <WrapCard>
             <form action="">
                 
                  <div className={controllerClass}>
@@ -22,6 +22,6 @@ export default function Login() {
                 </div>
                 <Button>Login</Button>
             </form>
-        </Card>
+        </WrapCard>
   )
 }
