@@ -18,9 +18,27 @@ export default function Login() {
         setCred({...cred, [name]: value})
     }
 
+    async function handleLoginUser(e){
+        e.preventDefault()
+        const response = await fetch('http://localhost:8000/user/login', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cred)
+        })
+        const data = await response.json()
+        console.log(data)
+
+        // http://localhost:5173/register
+
+    }
+
+    console.log(cred)
+
   return (
     <WrapCard>
-            <form action="">
+            <form onSubmit={handleLoginUser}>
                 
                  <div className={controllerClass}>
                     <label htmlFor="email" className={labelClass}>Email</label>

@@ -9,7 +9,7 @@ const inputClass = 'border border-blue-400 w-100 text-lg p-1 rounded-md'
 
 export default function Register() {
     const [user, setUser] = useState({
-        fullname: '',
+        fullName: '',
         email: '',
         number: '',
         password: ''
@@ -20,13 +20,28 @@ export default function Register() {
         setUser({...user, [name]: value})
     }
 
+    async function handleRegisterUser(e){
+        e.preventDefault()
+        const response = await fetch('http://localhost:8000/user/register', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        const data = await response.json()
+
+        // http://localhost:5173/register
+
+    }
+    console.log(user)
 
   return (
     <WrapCard>
-        <form action="">
+        <form onSubmit={handleRegisterUser}>
             <div className={controllerClass}>
                 <label htmlFor="fullname" className={labelClass}>Full Name</label>
-                <input type="text" id = 'fullname' name='fullname' onChange={handleChange} required className={inputClass}/>
+                <input type="text" id = 'fullname' name='fullName' onChange={handleChange} required className={inputClass}/>
             </div>
              <div className={controllerClass}>
                 <label htmlFor="email" className={labelClass}>Email</label>
