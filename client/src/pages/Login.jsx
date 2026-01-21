@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import WrapCard from '../components/WrapCard'
 
@@ -12,6 +13,7 @@ export default function Login() {
         email:'',
         password:''
     })
+    const navigate = useNavigate()
 
     function handleChange(e){
         const {name, value} = e.target
@@ -28,10 +30,8 @@ export default function Login() {
             body: JSON.stringify(cred)
         })
         const data = await response.json()
-        console.log(data)
-
-        // http://localhost:5173/register
-
+        localStorage.setItem('user', JSON.stringify(data))
+        navigate('/dashboard')
     }
 
     console.log(cred)

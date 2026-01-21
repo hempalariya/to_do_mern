@@ -8,7 +8,7 @@ const User = require("./schema/userSchema");
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+ 
 app.post("/user/register", async (req, res) => {
   console.log(req.body);
   try {
@@ -23,7 +23,7 @@ app.post("/user/register", async (req, res) => {
       throw new Error("internal server error");
     }
     res.status(200).json({
-      fullName,
+      fullName
     });
   } catch (error) {
     console.log(error);
